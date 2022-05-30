@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <MeteoDetails />
+    <MeteoDetails v-bind="meteo_data" />
   </div>
 </template>
 
@@ -11,7 +11,18 @@ export default {
   name: 'App',
   components: {
     MeteoDetails
-  }
+  },
+  data: () => ({
+    meteo_data: {
+      ville:"Paris",
+      description:"Nuageux",
+      temperature: 25,
+      humidity: 50,
+      pressure: 1021,
+      wind_speed: 14,
+      icon_url: ""
+    }
+  })
 }
 </script>
 
